@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
-        <header class="header">
-            <h1 class="title">Welcome to Etch-A-Sketch</h1>
-        </header>
-    
+    <header class="header">
+        <h1 class="title">Welcome to Etch-A-Sketch</h1>
+    </header>
     <main class="main">
-        <div class="settings">
-            <input id="colorPicker" type="color" value="#333333" />
-        <button id="colorBtn">Color mode</button>
-        <button id="rainbowBtn">Rainbow mode</button>
-        <button id="clearBtn">Clear</button>
-        <div id="sizeValue">16 x 16</div>
-        <input id="sizeSlider" type="range" value="16" min="1" max="256" />
-        </div>
-        
-        <div class="container"></div>
-    </main>
-    
+        <section class="settings" aria-labelledby="settings-heading">
+            <h2 id="settings-heading" class="visually-hidden">Settings</h2>
+            <label for="colorPicker" class="label">Choose your color:</label>
+            <input id="colorPicker" type="color" value="#333333" aria-label="Color Picker" />
+            
+            <button id="colorBtn" aria-pressed="false" class="btn">Color Mode</button>
+            <button id="rainbowBtn" aria-pressed="false" class="btn">Rainbow Mode</button>
+            <button id="clearBtn" class="btn">Clear</button>
 
-    <script src="script.js"></script>
+            <label for="sizeSlider" class="label">Grid Size:</label>
+            <div id="sizeValue" aria-live="polite">16 x 16</div>
+            <input id="sizeSlider" type="range" value="16" min="1" max="64" step="1" aria-labelledby="sizeValue" />
+        </section>
+        
+        <section class="drawing-area" aria-labelledby="drawing-area-heading">
+            <h2 id="drawing-area-heading" class="visually-hidden">Drawing Area</h2>
+            <div class="container" role="grid" aria-label="Etch-A-Sketch Drawing Area"></div>
+        </section>
+    </main>
 </body>
 </html>

@@ -1,133 +1,121 @@
-:root {
-    --primary-dark: #333;
-    --primary-light: #ededed;
-    --secondary-light: #fefefe;
-  }
-
+/* General Styles */
 body {
-    background-color: var(--primary-light);
-    color: var(--primary-dark);
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
 }
 
-h1 {
-    line-height: 1.2;
-}
-
-button, input {
-  width: 100%;
-  border: none;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: pointer;
-  outline: none;
-}
- /* Header */
-.header {
-    padding: 30px 0;
-  }
-  
-  .title {
+header {
+    position: absolute;
+    top: 20px;
     text-align: center;
-    font-size: 80px;
-  }
+    width: 100%;
+}
 
-/* Main */
+.title {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Layout for Main Content */
 .main {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 100px;
-    max-width: 1100px;
-    margin: 0 auto;
+    justify-content: space-between;
+    align-items: normal;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
 }
 
+/* Settings Section */
 .settings {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    width: 200px;
+    gap: 15px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    width: 100px;
 }
 
-button {
-    padding: 10px 20px;
-    border: 1px solid var(--primary-dark);
+.label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="color"],
+input[type="range"] {
+    cursor: pointer;
+}
+
+#sizeValue {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s ease;
 }
 
-button.active {
-    background-color: var(--primary-dark);
-    color: var(--primary-light);
+.btn:hover {
+    background-color: #555;
 }
 
-button, input[type='color'] {
-    transition: transform 0.1s ease-in-out;
+.btn.active {
+    background-color: #007bff;
+    color: #fff;
 }
 
-button:hover, input[type='color']:hover {
-    transform: scale(1.05);
-}
-
-input[type='color']:active {
-    transition: transform 0.05s ease-in-out;
-  transform: scale(1);
-}
-
-input[type='color'] {
-    -webkit-appearance: none;
-    width: 80px;
-    height: 80px;
-    border: none;
-}
-
-input[type='color']::-webkit-color-swatch-wrapper {
-    padding: 0;
-}
-  
-input[type='color']::-webkit-color-swatch {
-    border: none;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.size-value {
-    margin-bottom: -20px;
-    font-size: 20px;
-  }
-  
-  input[type='range'] {
-    -webkit-appearance: none;
-    background-color: var(--primary-light);
-  }
-  
-  input[type='range']::-webkit-slider-runnable-track {
-    height: 10px;
-    border: 1px solid var(--primary-dark);
-    border-radius: 25px;
-    background: var(--secondary-light);
-  }
-  
-  input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 25px;
-    margin-top: -8px;
-    background: var(--primary-dark);
-  }
-
+/* Grid Container */
 .container {
     display: grid;
+    gap: 1px;
+    background-color: #ccc;
+    flex-grow: 1;
     width: 500px;
-    height: 500px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 700px;
+    aspect-ratio: 1 / 1;
+    border: 2px solid #333;
+    border-radius: 10px;
 }
 
-.cells {
-    user-select: none;
+/* Grid Cells */
+.cell {
+    background-color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .main {
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    .settings {
+        width: 100%;
+        max-width: 100px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
 }
