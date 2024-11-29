@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Welcome to Etch-A-Sketch</h1>
+    
+        <header class="header">
+            <h1 class="title">Welcome to Etch-A-Sketch</h1>
         </header>
-    </div>
-
+    
+    <main class="main">
+        <div class="settings">
+            <input id="colorPicker" type="color" value="#333333" />
+        <button id="colorBtn">Color mode</button>
+        <button id="rainbowBtn">Rainbow mode</button>
+        <button id="clearBtn">Clear</button>
+        <div id="sizeValue">16 x 16</div>
+        <input id="sizeSlider" type="range" value="16" min="1" max="256" />
+        </div>
+        
+        <div class="container"></div>
+    </main>
     
 
     <script src="script.js"></script>
