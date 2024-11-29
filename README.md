@@ -1,3 +1,4 @@
 # Etch-a-Sketch
 
-A tablet with XxX grid using mouse as a stylo.
+Etch a sketch made with HTML, CSS and Javascript.
+
